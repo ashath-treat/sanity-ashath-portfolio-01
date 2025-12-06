@@ -26,6 +26,13 @@ jobs:
 
       - name: Build Sanity Studio
         run: npm run build
+        
+      - name: Show folder structure after build
+        run: |
+          echo "=== ROOT DIRECTORY ==="
+          ls -R .
+          echo "=== SANITY-STUDIO DIRECTORY ==="
+          ls -R ./sanity-studio
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
@@ -33,6 +40,6 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_SWA_TOKEN_SANITY  }}
           action: upload
 
-          app_location: ""               # ← Do NOT set "/"
+          app_location: "/"               # ← Do NOT set "/"
           app_artifact_location: "dist"  # ← Points to built output
           skip_app_build: true
