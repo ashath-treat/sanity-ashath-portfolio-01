@@ -26,13 +26,6 @@ jobs:
 
       - name: Build Sanity Studio
         run: npm run build
-        
-      - name: Show folder structure after build
-        run: |
-          echo "=== ROOT DIRECTORY ==="
-          ls -R .
-          echo "=== SANITY-STUDIO DIRECTORY ==="
-          ls -R ./sanity-studio
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
