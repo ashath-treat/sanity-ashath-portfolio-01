@@ -25,12 +25,10 @@ jobs:
 
       # Install Sanity dependencies
       - name: Install dependencies
-        working-directory: ./sanity-studio
         run: npm install
 
       # Build Sanity Studio
       - name: Build Sanity Studio
-        working-directory: ./sanity-studio
         run: npm run build
 
       # Deploy the built Sanity Studio
